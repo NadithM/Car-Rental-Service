@@ -1,0 +1,1555 @@
+{
+  "info": {
+    "_postman_id": "71991f66-a851-4dff-8a11-55342b7194ab",
+    "name": "Car Rental Service",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Manage Vehicles",
+      "item": [
+        {
+          "name": "Register Car",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"plateNumber\": \"12345\",\r\n    \"brand\": \"audi\",\r\n    \"typeOfFuel\": \"LPG\",\r\n    \"transmission\": \"AUTOMATIC\",\r\n    \"features\": [\r\n        \"GPS\",\r\n        \"PET_FRIENDLY\"\r\n    ],\r\n    \"carBodyConfiguration\": \"SEDAN\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:8080/car-rental-service/v1/vehicles/cars",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "car-rental-service",
+                "v1",
+                "vehicles",
+                "cars"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Successfully Car Register",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"plateNumber\": \"12345\",\r\n    \"brand\": \"audi\",\r\n    \"typeOfFuel\": \"LPG\",\r\n    \"transmission\": \"AUTOMATIC\",\r\n    \"features\": [\r\n        \"GPS\",\r\n        \"PET_FRIENDLY\"\r\n    ],\r\n    \"carBodyConfiguration\": \"SEDAN\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "localhost:8080/car-rental-service/v1/vehicles/cars",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "car-rental-service",
+                    "v1",
+                    "vehicles",
+                    "cars"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 09 Sep 2021 15:33:16 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"id\": \"163120159631701001\",\n    \"plateId\": \"12345\",\n    \"type\": \"CAR\",\n    \"brand\": \"audi\",\n    \"typeOfFuel\": \"LPG\",\n    \"transmission\": \"AUTOMATIC\",\n    \"features\": [\n        \"GPS\",\n        \"PET_FRIENDLY\"\n    ],\n    \"active\": false,\n    \"carBodyConfiguration\": \"SEDAN\"\n}"
+            },
+            {
+              "name": "Plate Number Missing",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"plateNumber\": \"\",\r\n    \"brand\": \"audi\",\r\n    \"typeOfFuel\": \"LPG\",\r\n    \"transmission\": \"AUTOMATIC\",\r\n    \"features\": [\r\n        \"GPS\",\r\n        \"PET_FRIENDLY\"\r\n    ],\r\n    \"carBodyConfiguration\": \"SEDAN\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "localhost:8080/car-rental-service/v1/vehicles/cars",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "car-rental-service",
+                    "v1",
+                    "vehicles",
+                    "cars"
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 09 Sep 2021 15:34:23 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"errorInfo\": \"Plate Number can't be null or empty\",\n    \"location\": \"plateNumber\",\n    \"status\": \"400\"\n}"
+            },
+            {
+              "name": "Invalid Value in the request payload",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"plateNumber\": \"12345\",\r\n    \"brand\": \"audi\",\r\n    \"typeOfFuel\": \"LP\",\r\n    \"transmission\": \"AUTOMATIC\",\r\n    \"features\": [\r\n        \"GPS\",\r\n        \"PET_FRIENDLY\"\r\n    ],\r\n    \"carBodyConfiguration\": \"SEDAN\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "localhost:8080/car-rental-service/v1/vehicles/cars",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "car-rental-service",
+                    "v1",
+                    "vehicles",
+                    "cars"
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 09 Sep 2021 15:34:58 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"errorInfo\": \"Invalid fuelType : LP. Valid fuelTypes are [PETROL, DIESEL, LPG, ELECTRIC, HYBRID]\",\n    \"location\": \"typeOfFuel\",\n    \"status\": \"400\"\n}"
+            },
+            {
+              "name": "Successfully Car Register without Optional Value",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"plateNumber\": \"12346\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "localhost:8080/car-rental-service/v1/vehicles/cars",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "car-rental-service",
+                    "v1",
+                    "vehicles",
+                    "cars"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 09 Sep 2021 15:35:50 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"id\": \"163120175093001002\",\n    \"plateId\": \"12346\",\n    \"type\": \"CAR\",\n    \"active\": false\n}"
+            },
+            {
+              "name": "Error Response Duplicate Request",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"plateNumber\": \"12345\",\r\n    \"brand\": \"AUDI\",\r\n    \"typeOfFuel\": \"LPG\",\r\n    \"transmission\": \"AUTOMATIC\",\r\n    \"features\": [\r\n        \"GPS\",\r\n        \"PET_FRIENDLY\"\r\n    ],\r\n    \"carBodyConfiguration\": \"SEDAN\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "localhost:8080/car-rental-service/v1/vehicles/cars",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "car-rental-service",
+                    "v1",
+                    "vehicles",
+                    "cars"
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 09 Sep 2021 16:57:06 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"errorInfo\": \"Duplicate Record Found\",\n    \"status\": \"400\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "Register Car's Availability",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"plateId\": \"12347\",\r\n    \"availableDates\": [\r\n        {\r\n            \"from\": \"2021-09-08T08:00\",\r\n            \"to\": \"2021-09-10T08:00\"\r\n        },\r\n        {\r\n            \"from\": \"2021-09-12T12:00\",\r\n            \"to\": \"2021-09-20T12:00\"\r\n        }\r\n    ],\r\n    \"rentalPricePerHour\": 25.00\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:8080/car-rental-service/v1/vehicles/cars/availability",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "car-rental-service",
+                "v1",
+                "vehicles",
+                "cars",
+                "availability"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Error Response - Try to register availability with invalid plateId",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"plateId\": \"12343\",\r\n    \"availableDates\": [\r\n        {\r\n            \"from\": \"2021-09-08T08:00\",\r\n            \"to\": \"2021-09-10T08:00\"\r\n        },\r\n        {\r\n            \"from\": \"2021-09-12T12:00\",\r\n            \"to\": \"2021-09-20T12:00\"\r\n        }\r\n    ],\r\n    \"rentalPricePerHour\": 25.00\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "localhost:8080/car-rental-service/v1/vehicles/cars/availability",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "car-rental-service",
+                    "v1",
+                    "vehicles",
+                    "cars",
+                    "availability"
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 09 Sep 2021 16:58:16 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"errorInfo\": \"Car is not found by plate Id: 12343\",\n    \"status\": \"400\"\n}"
+            },
+            {
+              "name": "Success Response - Availability saved",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"plateId\": \"12345\",\r\n    \"availableDates\": [\r\n        {\r\n            \"from\": \"2021-09-08T08:00\",\r\n            \"to\": \"2021-09-10T08:00\"\r\n        },\r\n        {\r\n            \"from\": \"2021-09-12T12:00\",\r\n            \"to\": \"2021-09-20T12:00\"\r\n        }\r\n    ],\r\n    \"rentalPricePerHour\": 25.00\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "localhost:8080/car-rental-service/v1/vehicles/cars/availability",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "car-rental-service",
+                    "v1",
+                    "vehicles",
+                    "cars",
+                    "availability"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 09 Sep 2021 16:59:54 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"id\": \"163120557342701001\",\n    \"plateId\": \"12345\",\n    \"type\": \"CAR\",\n    \"brand\": \"AUDI\",\n    \"typeOfFuel\": \"LPG\",\n    \"transmission\": \"AUTOMATIC\",\n    \"features\": [\n        \"GPS\",\n        \"PET_FRIENDLY\"\n    ],\n    \"availableDates\": [\n        {\n            \"from\": \"2021-09-08T08:00:00\",\n            \"to\": \"2021-09-10T08:00:00\"\n        },\n        {\n            \"from\": \"2021-09-12T12:00:00\",\n            \"to\": \"2021-09-20T12:00:00\"\n        }\n    ],\n    \"rentalPricePerHour\": 25,\n    \"active\": true,\n    \"carBodyConfiguration\": \"SEDAN\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "Get Car By PlateId",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "localhost:8080/car-rental-service/v1/vehicles/cars?plateId=12347",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "car-rental-service",
+                "v1",
+                "vehicles",
+                "cars"
+              ],
+              "query": [
+                {
+                  "key": "plateId",
+                  "value": "12347"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Success Response",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "localhost:8080/car-rental-service/v1/vehicles/cars?plateId=12347",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "car-rental-service",
+                    "v1",
+                    "vehicles",
+                    "cars"
+                  ],
+                  "query": [
+                    {
+                      "key": "plateId",
+                      "value": "12347"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 09 Sep 2021 04:27:45 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"id\": \"163116161827301001\",\n    \"plateId\": \"12347\",\n    \"type\": \"CAR\",\n    \"brand\": \"audi\",\n    \"typeOfFuel\": \"LPG\",\n    \"transmission\": \"MANUAL\",\n    \"features\": [\n        \"GPS\",\n        \"PET_FRIENDLY\"\n    ],\n    \"availableDates\": [\n        {\n            \"from\": \"2021-09-08T08:00:00\",\n            \"to\": \"2021-09-10T10:00:00\"\n        },\n        {\n            \"from\": \"2021-09-12T11:00:00\",\n            \"to\": \"2021-09-20T15:00:00\"\n        }\n    ],\n    \"rentalPricePerHour\": 25,\n    \"active\": true\n}"
+            }
+          ]
+        },
+        {
+          "name": "Get Car By Id",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "localhost:8080/car-rental-service/v1/vehicles/cars?id=163107793141601003",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "car-rental-service",
+                "v1",
+                "vehicles",
+                "cars"
+              ],
+              "query": [
+                {
+                  "key": "id",
+                  "value": "163107793141601003"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Get Car By Id",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "localhost:8080/car-rental-service/v1/vehicles/cars?id=163115370834701001",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "car-rental-service",
+                    "v1",
+                    "vehicles",
+                    "cars"
+                  ],
+                  "query": [
+                    {
+                      "key": "id",
+                      "value": "163115370834701001"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 09 Sep 2021 02:16:24 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"id\": \"163115370834701001\",\n    \"plateId\": \"12347\",\n    \"type\": \"CAR\",\n    \"brand\": \"audi\",\n    \"typeOfFuel\": \"LPG\",\n    \"transmission\": \"MANUAL\",\n    \"features\": [\n        \"GPS\",\n        \"PET_FRIENDLY\"\n    ],\n    \"availableDates\": [\n        {\n            \"from\": \"2021-09-08T09:00:00\",\n            \"to\": \"2021-09-10T09:00:00\"\n        },\n        {\n            \"from\": \"2021-09-12T12:00:00\",\n            \"to\": \"2021-09-20T14:00:00\"\n        }\n    ],\n    \"blackOutDates\": [],\n    \"rentalPricePerHour\": 25,\n    \"active\": true\n}"
+            },
+            {
+              "name": "Success Response",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "localhost:8080/car-rental-service/v1/vehicles/cars?id=163116161827301001",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "car-rental-service",
+                    "v1",
+                    "vehicles",
+                    "cars"
+                  ],
+                  "query": [
+                    {
+                      "key": "id",
+                      "value": "163116161827301001"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 09 Sep 2021 04:28:06 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"id\": \"163116161827301001\",\n    \"plateId\": \"12347\",\n    \"type\": \"CAR\",\n    \"brand\": \"audi\",\n    \"typeOfFuel\": \"LPG\",\n    \"transmission\": \"MANUAL\",\n    \"features\": [\n        \"GPS\",\n        \"PET_FRIENDLY\"\n    ],\n    \"availableDates\": [\n        {\n            \"from\": \"2021-09-08T08:00:00\",\n            \"to\": \"2021-09-10T10:00:00\"\n        },\n        {\n            \"from\": \"2021-09-12T11:00:00\",\n            \"to\": \"2021-09-20T15:00:00\"\n        }\n    ],\n    \"rentalPricePerHour\": 25,\n    \"active\": true\n}"
+            }
+          ]
+        },
+        {
+          "name": "Search Cars",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"type\": [\r\n        \"CAR\"\r\n    ],\r\n    \"brand\": [\"audi\"],\r\n    \"typeOfFuel\": [],\r\n    \"transmission\": [],\r\n    \"features\": [],\r\n    \"availableDateRanges\": [\r\n        {\r\n            \"from\": \"2021-09-08T07:00\",\r\n            \"to\": \"2021-09-10T07:00\"\r\n        }\r\n    ],\r\n    \"minimumRate\": 15.00,\r\n    \"maximumRate\": 50.00\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:8080/car-rental-service/v1/vehicles/cars/search",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "car-rental-service",
+                "v1",
+                "vehicles",
+                "cars",
+                "search"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "No Result Response - branch not found",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"type\": [\r\n      \"CAR\"\r\n    ],\r\n    \"brand\": [\"toyota\"],\r\n    \"typeOfFuel\": [],\r\n    \"transmission\": [],\r\n    \"features\": [],\r\n    \"availableDateRanges\": [\r\n        {\r\n            \"from\": \"2021-09-08T08:00\",\r\n            \"to\": \"2021-09-09T09:00\"\r\n        }\r\n    ],\r\n    \"minimumRate\": 15.00,\r\n    \"maximumRate\": 50.00,\r\n    \"carBodyConfigurations\":[]\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "localhost:8080/car-rental-service/v1/vehicles/cars/search",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "car-rental-service",
+                    "v1",
+                    "vehicles",
+                    "cars",
+                    "search"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 09 Sep 2021 04:29:49 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "[]"
+            },
+            {
+              "name": "No Result Response - DateRange Not WithIn",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"type\": [\r\n      \"CAR\"\r\n    ],\r\n    \"brand\": [\"audi\"],\r\n    \"typeOfFuel\": [],\r\n    \"transmission\": [],\r\n    \"features\": [],\r\n    \"availableDateRanges\": [\r\n        {\r\n            \"from\": \"2021-09-07T08:00\",\r\n            \"to\": \"2021-09-09T09:00\"\r\n        }\r\n    ],\r\n    \"minimumRate\": 15.00,\r\n    \"maximumRate\": 50.00,\r\n    \"carBodyConfigurations\":[]\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "localhost:8080/car-rental-service/v1/vehicles/cars/search",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "car-rental-service",
+                    "v1",
+                    "vehicles",
+                    "cars",
+                    "search"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 09 Sep 2021 04:30:45 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "[]"
+            },
+            {
+              "name": "Success Response",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"type\": [\r\n      \"CAR\"\r\n    ],\r\n    \"brand\": [],\r\n    \"typeOfFuel\": [],\r\n    \"transmission\": [],\r\n    \"features\": [],\r\n    \"availableDateRanges\": [\r\n        {\r\n        \"from\": \"2021-09-09T09:00\",\r\n        \"to\": \"2021-09-09T10:00\"\r\n        }\r\n    ],\r\n    \"minimumRate\": 15.00,\r\n    \"maximumRate\": 50.00,\r\n    \"carBodyConfigurations\":[]\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "localhost:8080/car-rental-service/v1/vehicles/cars/search",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "car-rental-service",
+                    "v1",
+                    "vehicles",
+                    "cars",
+                    "search"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 09 Sep 2021 17:50:26 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "[\n    {\n        \"id\": \"163120981506501001\",\n        \"plateId\": \"12345\",\n        \"type\": \"CAR\",\n        \"brand\": \"AUDI\",\n        \"typeOfFuel\": \"LPG\",\n        \"transmission\": \"AUTOMATIC\",\n        \"features\": [\n            \"GPS\",\n            \"PET_FRIENDLY\"\n        ],\n        \"availableDates\": [\n            {\n                \"from\": \"2021-09-08T08:00:00\",\n                \"to\": \"2021-09-10T08:00:00\"\n            },\n            {\n                \"from\": \"2021-09-12T12:00:00\",\n                \"to\": \"2021-09-20T12:00:00\"\n            }\n        ],\n        \"rentalPricePerHour\": 25,\n        \"active\": true,\n        \"carBodyConfiguration\": \"SEDAN\"\n    }\n]"
+            },
+            {
+              "name": "Success Response - Multiple Results",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"type\": [\r\n      \"CAR\"\r\n    ],\r\n    \"brand\": [],\r\n    \"typeOfFuel\": [],\r\n    \"transmission\": [],\r\n    \"features\": [],\r\n    \"availableDateRanges\": [\r\n        {\r\n        \"from\": \"2021-09-09T09:00\",\r\n        \"to\": \"2021-09-09T10:00\"\r\n        }\r\n    ],\r\n    \"minimumRate\": 15.00,\r\n    \"maximumRate\": 50.00,\r\n    \"carBodyConfigurations\":[]\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "localhost:8080/car-rental-service/v1/vehicles/cars/search",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "car-rental-service",
+                    "v1",
+                    "vehicles",
+                    "cars",
+                    "search"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 09 Sep 2021 17:52:09 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "[\n    {\n        \"id\": \"163120981506501001\",\n        \"plateId\": \"12345\",\n        \"type\": \"CAR\",\n        \"brand\": \"AUDI\",\n        \"typeOfFuel\": \"LPG\",\n        \"transmission\": \"AUTOMATIC\",\n        \"features\": [\n            \"GPS\",\n            \"PET_FRIENDLY\"\n        ],\n        \"availableDates\": [\n            {\n                \"from\": \"2021-09-08T08:00:00\",\n                \"to\": \"2021-09-10T08:00:00\"\n            },\n            {\n                \"from\": \"2021-09-12T12:00:00\",\n                \"to\": \"2021-09-20T12:00:00\"\n            }\n        ],\n        \"rentalPricePerHour\": 25,\n        \"active\": true,\n        \"carBodyConfiguration\": \"SEDAN\"\n    },\n    {\n        \"id\": \"163120988227101002\",\n        \"plateId\": \"12346\",\n        \"type\": \"CAR\",\n        \"brand\": \"TESLA\",\n        \"typeOfFuel\": \"ELECTRIC\",\n        \"transmission\": \"AUTOMATIC\",\n        \"features\": [\n            \"GPS\",\n            \"PET_FRIENDLY\"\n        ],\n        \"availableDates\": [\n            {\n                \"from\": \"2021-09-08T08:00:00\",\n                \"to\": \"2022-09-10T08:00:00\"\n            }\n        ],\n        \"rentalPricePerHour\": 25,\n        \"active\": true,\n        \"carBodyConfiguration\": \"SEDAN\"\n    }\n]"
+            },
+            {
+              "name": "Success  Response - Tesla Brand Only",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"type\": [\r\n      \"CAR\"\r\n    ],\r\n    \"brand\": [\"TESLA\"],\r\n    \"typeOfFuel\": [],\r\n    \"transmission\": [],\r\n    \"features\": [],\r\n    \"availableDateRanges\": [\r\n        {\r\n        \"from\": \"2021-09-09T09:00\",\r\n        \"to\": \"2021-09-09T10:00\"\r\n        }\r\n    ],\r\n    \"minimumRate\": 15.00,\r\n    \"maximumRate\": 50.00,\r\n    \"carBodyConfigurations\":[]\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "localhost:8080/car-rental-service/v1/vehicles/cars/search",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "car-rental-service",
+                    "v1",
+                    "vehicles",
+                    "cars",
+                    "search"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 09 Sep 2021 17:53:05 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "[\n    {\n        \"id\": \"163120988227101002\",\n        \"plateId\": \"12346\",\n        \"type\": \"CAR\",\n        \"brand\": \"TESLA\",\n        \"typeOfFuel\": \"ELECTRIC\",\n        \"transmission\": \"AUTOMATIC\",\n        \"features\": [\n            \"GPS\",\n            \"PET_FRIENDLY\"\n        ],\n        \"availableDates\": [\n            {\n                \"from\": \"2021-09-08T08:00:00\",\n                \"to\": \"2022-09-10T08:00:00\"\n            }\n        ],\n        \"rentalPricePerHour\": 25,\n        \"active\": true,\n        \"carBodyConfiguration\": \"SEDAN\"\n    }\n]"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Manage Users",
+      "item": [
+        {
+          "name": "Register User",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"userId\": \"922684901V\",\r\n    \"fName\": \"Nadith\",\r\n    \"lName\": \"Premaratne\",\r\n    \"email\": \"nadith.sg@gmail.com\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:8080/car-rental-service/v1/users",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "car-rental-service",
+                "v1",
+                "users"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Success Response - User Created",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"userId\": \"922684901V\",\r\n    \"fName\": \"Nadith\",\r\n    \"lName\": \"Premaratne\",\r\n    \"email\": \"nadith.sg@gmail.com\",\r\n    \"password\":\"passowrd\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "localhost:8080/car-rental-service/v1/users",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "car-rental-service",
+                    "v1",
+                    "users"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 09 Sep 2021 17:45:57 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"id\": \"163120955787701001\",\n    \"userId\": \"922684901V\",\n    \"fName\": \"Nadith\",\n    \"lName\": \"Premaratne\",\n    \"email\": \"nadith.sg@gmail.com\",\n    \"password\": \"passowrd\"\n}"
+            },
+            {
+              "name": "Error Response - User Id Missing",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n\r\n    \"fName\": \"Nadith\",\r\n    \"lName\": \"Premaratne\",\r\n    \"email\": \"nadith.sg@gmail.com\",\r\n    \"password\":\"passowrd\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "localhost:8080/car-rental-service/v1/users",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "car-rental-service",
+                    "v1",
+                    "users"
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 09 Sep 2021 17:46:32 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"errorInfo\": \"userId can't be null or empty\",\n    \"location\": \"userId\",\n    \"status\": \"400\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "Get User By Id",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "localhost:8080/car-rental-service/v1/users?id=12345",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "car-rental-service",
+                "v1",
+                "users"
+              ],
+              "query": [
+                {
+                  "key": "id",
+                  "value": "12345"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Success Response",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "localhost:8080/car-rental-service/v1/users?id=163120955787701001",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "car-rental-service",
+                    "v1",
+                    "users"
+                  ],
+                  "query": [
+                    {
+                      "key": "id",
+                      "value": "163120955787701001"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 09 Sep 2021 17:47:21 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"id\": \"163120955787701001\",\n    \"userId\": \"922684901V\",\n    \"fName\": \"Nadith\",\n    \"lName\": \"Premaratne\",\n    \"email\": \"nadith.sg@gmail.com\",\n    \"password\": \"passowrd\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "Get User By UserId",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "localhost:8080/car-rental-service/v1/users?userId=922684901V",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "car-rental-service",
+                "v1",
+                "users"
+              ],
+              "query": [
+                {
+                  "key": "userId",
+                  "value": "922684901V"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Success Response",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "localhost:8080/car-rental-service/v1/users?userId=922684901V",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "car-rental-service",
+                    "v1",
+                    "users"
+                  ],
+                  "query": [
+                    {
+                      "key": "userId",
+                      "value": "922684901V"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 09 Sep 2021 17:47:50 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"id\": \"163120955787701001\",\n    \"userId\": \"922684901V\",\n    \"fName\": \"Nadith\",\n    \"lName\": \"Premaratne\",\n    \"email\": \"nadith.sg@gmail.com\",\n    \"password\": \"passowrd\"\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Manage Orders",
+      "item": [
+        {
+          "name": "Create Order",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"userId\": \"922684901V\",\r\n    \"plateId\": \"12345\",\r\n    \"rentedPeriod\": {\r\n        \"from\": \"2021-09-08T23:50\",\r\n        \"to\": \"2021-09-10T23:50\"\r\n    }\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:8080/car-rental-service/v1/orders",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "car-rental-service",
+                "v1",
+                "orders"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Error Response - When Vehicle is not registered",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"userId\": \"922684901V\",\r\n    \"plateId\": \"12347\",\r\n    \"rentedPeriod\": {\r\n        \"from\": \"2021-09-08T23:50\",\r\n        \"to\": \"2021-09-10T23:50\"\r\n    }\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "localhost:8080/car-rental-service/v1/orders",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "car-rental-service",
+                    "v1",
+                    "orders"
+                  ]
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 09 Sep 2021 05:02:24 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"errorInfo\": \"Plate Number is Invalid :12347\",\n    \"status\": \"500\"\n}"
+            },
+            {
+              "name": "Error Response - When user is not registered",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"userId\": \"922684901V\",\r\n    \"plateId\": \"12347\",\r\n    \"rentedPeriod\": {\r\n        \"from\": \"2021-09-08T23:50\",\r\n        \"to\": \"2021-09-10T23:50\"\r\n    }\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "localhost:8080/car-rental-service/v1/orders",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "car-rental-service",
+                    "v1",
+                    "orders"
+                  ]
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 09 Sep 2021 05:03:08 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"errorInfo\": \"User Id is Invalid :922684901V\",\n    \"status\": \"500\"\n}"
+            },
+            {
+              "name": "Error Response - Out of service - Vehicle not active",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"userId\": \"922684901V\",\r\n    \"plateId\": \"12347\",\r\n    \"rentedPeriod\": {\r\n        \"from\": \"2021-09-08T23:50\",\r\n        \"to\": \"2021-09-10T23:50\"\r\n    }\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "localhost:8080/car-rental-service/v1/orders",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "car-rental-service",
+                    "v1",
+                    "orders"
+                  ]
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 09 Sep 2021 05:27:55 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"errorInfo\": \"Vehicle Temporary out of service :12347\",\n    \"status\": \"500\"\n}"
+            },
+            {
+              "name": "Success Response - Order Confirmed",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"userId\": \"922684901V\",\r\n    \"plateId\": \"12345\",\r\n    \"rentedPeriod\": {\r\n        \"from\": \"2021-09-09T10:00\",\r\n        \"to\": \"2021-09-09T23:00\"\r\n    }\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "localhost:8080/car-rental-service/v1/orders",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "car-rental-service",
+                    "v1",
+                    "orders"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 09 Sep 2021 17:53:48 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"orderId\": \"163121002806501001\",\n    \"userId\": \"922684901V\",\n    \"plateId\": \"12345\",\n    \"rentedPeriod\": {\n        \"from\": \"2021-09-09T10:00:00\",\n        \"to\": \"2021-09-09T23:00:00\"\n    },\n    \"rentedRatePerHour\": 25,\n    \"createdAt\": \"2021-09-10T01:53:48.0638582\",\n    \"modifiedAt\": \"2021-09-10T01:53:48.0638582\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "Get  Order By OrderId",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "localhost:8080/car-rental-service/v1/orders?orderId=12345",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "car-rental-service",
+                "v1",
+                "orders"
+              ],
+              "query": [
+                {
+                  "key": "orderId",
+                  "value": "12345"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}

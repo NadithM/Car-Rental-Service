@@ -1,0 +1,22 @@
+rest:
+  request:
+    timeout:
+      vehicle-search: 5000
+      order-vehicle: 5000
+      general: 2000
+taskExecutor:
+  corePoolSize:
+    searchOperation: 3
+    orderOperation: 2
+    userOperation: 2
+    vehicleOperation: 2
+  maxPoolSize:
+    searchOperation: 6
+    orderOperation: 4
+    userOperation: 4
+    vehicleOperation: 4
+  keepAliveTime:
+    searchOperation: 60
+    orderOperation: 60
+    userOperation: 60
+    vehicleOperation: 60
