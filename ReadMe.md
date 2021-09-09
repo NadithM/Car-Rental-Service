@@ -21,8 +21,10 @@
 we can add timeout configuration as needed depends on the response time for each flow.
 
 4. Main focus on flexibility to support change requests and new functionalities.
+
     1. System can support different vehicle type in the future based on open/close principle in SOLID. There will be
        minimum changes to code.
+       
     2. Search functionality is working for basic key-controls
         1. FilterParam.PARAM_VEHICLE_TYPE
         2. FilterParam.PARAM_BRAND
@@ -36,13 +38,18 @@ we can add timeout configuration as needed depends on the response time for each
    and specific key-controls for given vehicle type (in the case of CAR,CarBodyConfiguration is specific key-control to
    CAR(FilterParam)). we can extend search functionality for them extending KeyControl.class, BasicVehicleHandler.class
    by implementing abstract methods without changing the existing methods.
+   
     3. Search-Vehicles works as follows,
+  
         1. if a vehicle attributes contains single-valued fields (such as Brand,FuelType), corresponding key-control
-           field values will act as OR operations
+           field values will act as OR operations.
+           
         2. if a vehicle attributes contains multi-valued fields (such as Features), corresponding key-control field
-           values will act as AND operations
+           values will act as AND operations.
+           
         3. if key-controls fields are empty in the search criteria, ANY value of vehicle's corresponding attribute, will
            be match for search.
+           
     4. when we order the Vehicle for a given DateRange, those date Range will be black-out from availability. So won't
        be showing in the search criteria until it gets unblocked.
 
