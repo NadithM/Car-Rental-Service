@@ -91,7 +91,7 @@
    records from different tables and order of saving them inside **@Transactional** Method in the future modification. otherwise Rollbacks,DeadLocks,
    should be handled on partial success or error scenarios properly. Key point here are,
       * . Concurrent modification will be enable with this approch.
-      * . When we are going to order a vehicle we should make sure, Vehicle object will be locked on read/write.untill we complete the order and blackout those days range from vehicle's availability. new Order and Vehicle Objects changes should be atomic in database level.
+      * . When we are going to order a vehicle we should make sure, Vehicle object will be locked on read/write.untill we complete the order and blackout that date range from vehicle's availability. new Order and Vehicle Objects changes should be atomic in database level.
 
 8. based on the Server resources(No of Cores,based on CPU/IO intensive thread) and requirements we have to tweak these thread pool
    properties to get efficient thread pool configurations.
@@ -126,4 +126,3 @@ possible values ("dev","qa","prod"). ***Default value is "dev"***
 1. Security (authentication and authorization) due to time constrains. Can use token base approach for users.
 2. Not all rest request are validated by javax.
 3. ideally all classes should have unit test.
-4. 
