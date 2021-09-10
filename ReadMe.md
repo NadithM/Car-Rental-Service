@@ -50,15 +50,14 @@
         9. **FilterParam.PARAM_CAR_BODY_CONFIGURATION** -> we can search vehicles and filter based on car body type configurations. This only specific to vehicle type CAR
 
    
-   we can extend search functionality for them extending **KeyControl.class, BasicVehicleHandler.class**
-   by implementing abstract methods without changing the existing methods.
+   we can extend search functionality by extending **KeyControl.class, BasicVehicleHandler.class** and implementing abstract methods without changing the existing methods.
    
     3. **Search-Vehicles funtionality** works as follows,
   
-        1. if a vehicle attributes contains single-valued fields (such as Brand,FuelType), corresponding key-control
+        1. if a vehicle attributes contains single-valued fields (such as **Brand**,**FuelType**), corresponding key-control
            field values will act as OR operations.
            
-        2. if a vehicle attributes contains multi-valued fields (such as Features), corresponding key-control field
+        2. if a vehicle attributes contains multi-valued fields (such as **Features**), corresponding key-control field
            values will act as AND operations.
            
         3. if key-controls fields are empty in the search criteria, ANY value of vehicle's corresponding attribute, will
