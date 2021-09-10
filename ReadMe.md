@@ -97,6 +97,7 @@
 9. Added unit tests to one @Controller to cover certain aspects as the time permits.
 
 10. Controller advice will handle client errors and server errors.
+11. Once we register a **Vehicle** it will be in inactive state until we allocate availability. Inactive **Vehicle** is not showing in the search results.
 
 ## How to build and run ##
 
