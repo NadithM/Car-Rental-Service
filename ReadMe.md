@@ -37,17 +37,17 @@
        minimum changes to code.
        
     2. Search functionality is working for basic key-controls, I have extended search functionality not only to for specific date range & max rental price per hour, but also to support any parameters in the future for any given vehicle type adhering to SOLID principles.
-        1. FilterParam.PARAM_VEHICLE_TYPE    -> we can search vehicles and filter based on different vehicle types
-        2. FilterParam.PARAM_BRAND           -> we can search vehicles and filter based on different vehicle's brand
-        3. FilterParam.PARAM_TYPE_OF_FUEL    -> we can search vehicles and filter based on different vehicle's fuel type
-        4. FilterParam.PARAM_TRANSMISSION    -> we can search vehicles and filter based on different vehicle's transmission
-        5. FilterParam.PARAM_FEATURES        -> we can search vehicles and filter based on different features of vehicle
+        1. **FilterParam.PARAM_VEHICLE_TYPE**    -> we can search vehicles and filter based on different vehicle types
+        2. **FilterParam.PARAM_BRAND**           -> we can search vehicles and filter based on different vehicle's brand
+        3. **FilterParam.PARAM_TYPE_OF_FUEL**    -> we can search vehicles and filter based on different vehicle's fuel type
+        4. **FilterParam.PARAM_TRANSMISSION**    -> we can search vehicles and filter based on different vehicle's transmission
+        5. **FilterParam.PARAM_FEATURES**        -> we can search vehicles and filter based on different features of vehicle
         
-        6. FilterParam.PARAM_AVAIL_DATE_RANGE   -> we can search vehicles and filter based on date range that user need the vehicle
-        7. FilerParam.PARAM_MINIMUM_RATE_PER_HOUR  -> we can search vehicles and filter based on minimum rate for rental that user is confortable with
-        8. FilterParam.PARAM_MAXIMUM_RATE_PER_HOUR -> we can search vehicles and filter based on maximum rate for rental that user is confortable with
+        6. **FilterParam.PARAM_AVAIL_DATE_RANGE**   -> we can search vehicles and filter based on date range that user need the vehicle
+        7. **FilerParam.PARAM_MINIMUM_RATE_PER_HOUR**  -> we can search vehicles and filter based on minimum rate for rental that user is confortable with
+        8. **FilterParam.PARAM_MAXIMUM_RATE_PER_HOUR** -> we can search vehicles and filter based on maximum rate for rental that user is confortable with
         
-        9. FilterParam.PARAM_CAR_BODY_CONFIGURATION -> we can search vehicles and filter based on car body type configurations. This only specific to vehicle type CAR
+        9. **FilterParam.PARAM_CAR_BODY_CONFIGURATION** -> we can search vehicles and filter based on car body type configurations. This only specific to vehicle type CAR
 
    
    we can extend search functionality for them extending **KeyControl.class, BasicVehicleHandler.class**
