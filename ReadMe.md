@@ -118,11 +118,11 @@ possible values ("dev","qa","prod"). ***Default value is "dev"***
 
 > *mvn spring-boot:run*
 
-4. POSTMAN sample request collections can be taken from
+4. POSTMAN sample requests collection can be taken from here and also via the below link
    https://www.getpostman.com/collections/e2d572c366b143b07e79
 
 ### What's missing ###
 
-1. Security (authentication and authorization) due to time constrains. Can use token base approach for users.
+1. Security (authentication and authorization) due to time constrains. Can be used token base approach for users.
 2. Not all rest request are validated by javax.
 3. ideally all classes should have unit test.
